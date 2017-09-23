@@ -1,0 +1,17 @@
+default: &default
+  adapter: postgresql
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: moses
+  password: root
+  timeout: 5000
+
+development:
+  <<: *default
+  database: mosesito_development
+test:
+  <<: *default
+  database: mosesito_test
+
+production:
+  <<: *default
+  database: msoesito_production
